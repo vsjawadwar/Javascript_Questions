@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <form>
+        First Number: <input id="firstNum" type="text"><br><br>
+        Second Number: <input id="secondNum" type="text"><br><br>
+        <button onclick="addition()" type="button">Add</button>&nbsp;
+        <button onclick="substraction()" type="button">Minus</button><br>
+    </form>
+    <p id="pid"></p>
+    <span id="result"></span>
+    <script>
+        function addition(){
+            let a=Number(document.getElementById('firstNum').value);
+            let b=Number(document.getElementById('secondNum').value);   
+            document.getElementById('result').innerHTML= a+b;
+        }
+    </script>
+</body>
+</html>
