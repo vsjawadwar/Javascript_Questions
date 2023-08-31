@@ -1,0 +1,41 @@
+<!-- Write a JavaScript program to find the largest of three given integers. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum of three numbers</title>
+</head>
+<form >
+Fist Number: <input id="firstNum" type="text"><br><br>
+Second Number: <input id="secondNum" type="text"><br><br>
+Third Number: <input type="text" id="thirdNum"><br><br>
+<button id="btn" type="button" onclick="checkMax()">Check Max</button>
+</form>
+<p id="pid"></p>
+<script>
+    function checkMax(){
+        let n1=Number(document.getElementById("firstNum").value);
+        let n2=Number(document.getElementById("secondNum").value);
+        let n3=Number(document.getElementById("thirdNum").value);
+        let temp=null;
+        if(n1 >= n2)
+        {
+            temp=n1;
+        }
+        else{
+            temp=n2;
+        }
+        if(temp >=n3)
+        {
+            document.getElementById('pid').innerHTML= temp;
+        }
+        else{
+            document.getElementById('pid').innerHTML= n3;
+        }
+    }
+</script>
+<body>
+    
+</body>
+</html>
