@@ -5,7 +5,7 @@ function numCheck(a,b){
     }
     else if((a + b) === 8){
         return "Sum is 8";
-    }else if((a-b)===8){
+    }else if(Math.abs(a-b)===8){
         return "Substraction is 8";
     }else{
         return "Every condition fails";
