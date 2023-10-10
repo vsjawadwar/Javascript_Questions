@@ -7,6 +7,7 @@ let arr=[];
 let sum=0;
 let position=-1;
 let num=str.split("");
+// console.log(num);
     for(let i=0;i<num.length;i++){
         if(num[i]=='#'){
             position=i;
@@ -14,13 +15,13 @@ let num=str.split("");
     }
     for(let i=0;i<num.length;i++){
         if(i !== position){
-            sum+=arr[i];
+            sum+=num[i];
         }
     }
     for(let i=0;i<10;i++){
         if((sum + i)%3 == 0){
             num[position]=i;
-            arr.push(num.join());
+            arr.push(num.join(''));
         }
     }
     return arr;
