@@ -1,26 +1,23 @@
 // Write a JavaScript program to swap pairs of adjacent digits of a given integer of even length. 
-/*To Do:
-Problem need to be solved by below method
-
 function adjacentDigitSwap(num){
 let str=num.toString();
 let arr=str.split("");
     if(arr.length%2 == 0){
-        for(let i=0;i<arr.length;i++){
-            for(let j=i+1;j<arr.length;j++){
+        for(let i=0;i<arr.length-1;i+=2){
+    
                 let temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
             }
             return arr;
-        }
+        
     }else{
         return `${num} is not even length`;
     }
 }
-console.log(adjacentDigitSwap(1234));
-*/
+console.log(adjacentDigitSwap(123456));
 
+/*
 function swap_adjacent_digits(n) {
     if (n.toString().length % 2 != 0) {
       return false;
@@ -44,4 +41,4 @@ function swap_adjacent_digits(n) {
   console.log(swap_adjacent_digits(1234));
   console.log(swap_adjacent_digits(123456));
   console.log(swap_adjacent_digits(12345));
-  
+  */
