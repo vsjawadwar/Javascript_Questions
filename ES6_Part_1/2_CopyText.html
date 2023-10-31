@@ -1,0 +1,23 @@
+<!-- // Write a JavaScript program to copy a string to the clipboard. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Text</title>
+</head>
+<body>
+    <form>
+        Enter text to copy: <input type="text" id="txt">
+        <button id="btn" onclick="copyText()">Copy Text</button> 
+    </form>
+    <script>
+        function copyText(){
+            let str=document.getElementById('txt');
+            str.select();
+            navigator.clipboard.writeText(str.value);
+            alert(str.value);
+        }
+    </script>
+</body>
+</html>
