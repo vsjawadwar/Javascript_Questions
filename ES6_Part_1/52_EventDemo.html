@@ -38,18 +38,24 @@
     <h1>Basic Calculator</h1>
     <div id="layout">
     <h3 id="currentDate"></h3>
-    <form action="" class="calculator">
-        <input type="text" placeholder="Enter a number">
-        <input type="text" placeholder="Enter a number">
+    <form class="calculator">
+        <input type="text" id="firstNum" placeholder="Enter a number">
+        <input type="text" id="secondNum" placeholder="Enter a number">
         <button id="addition" class="btn">+</button>
-        <button id="substraction" class="btn">-</button>
-        <button id="division" class="btn">/</button>
-        <button id="multiplication" class="btn">*</button>
+        <button type="button" id="substraction" class="btn">-</button>
+        <button type="button" id="division" class="btn">/</button>
+        <button type="button" id="multiplication" class="btn">*</button>
     </form> 
-    <p id="result"></p>
 </div>
+<span id="result" class="resultDemo" >Hello</span>
     <script>
-
+        document.getElementById('addition').addEventListener('click',(e)=>{
+            
+            let result=Number(document.getElementById('firstNum').value) + Number(document.getElementById('secondNum').value);
+            alert(`${document.getElementById('firstNum').value} + ${document.getElementById('secondNum').value} = ${result}`);
+            document.getElementById('firstNum').value="";
+            document.getElementById('secondNum').value=""; 
+        },false);
     </script>
 </body>
 </html>
