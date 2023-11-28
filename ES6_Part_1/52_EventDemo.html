@@ -73,6 +73,14 @@
             document.getElementById('firstNum').value="";
             document.getElementById('secondNum').value=""; 
         },false);
+        document.getElementById('substraction').addEventListener('click',(e)=>{
+            
+            let result=Number(document.getElementById('firstNum').value) / Number(document.getElementById('secondNum').value);
+            document.getElementById('result').innerHTML=`${document.getElementById('firstNum').value} - ${document.getElementById('secondNum').value} = ${result}`
+            alert(`${document.getElementById('firstNum').value} / ${document.getElementById('secondNum').value} = ${result}`);
+            document.getElementById('firstNum').value="";
+            document.getElementById('secondNum').value=""; 
+        },false);
         document.getElementById('result').innerText="Hello Vishal";
     </script>
 </body>
