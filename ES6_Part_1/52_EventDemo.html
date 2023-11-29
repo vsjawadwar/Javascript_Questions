@@ -39,8 +39,8 @@
     <div id="layout">
     <h3 id="currentDate"></h3>
     <form class="calculator">
-        <input type="text" id="firstNum" placeholder="Enter a number">
-        <input type="text" id="secondNum" placeholder="Enter a number">
+        <input type="text" id="firstNum" placeholder="Enter a number" value="">
+        <input type="text" id="secondNum" placeholder="Enter a number" value="">
         <button id="addition" class="btn">+</button>
         <button type="button" id="substraction" class="btn">-</button>
         <button type="button" id="division" class="btn">/</button>
@@ -50,38 +50,37 @@
 <span id="result" class="resultDemo" >Hello</span>
     <script>
         document.getElementById('addition').addEventListener('click',(e)=>{
-            
-            let result=Number(document.getElementById('firstNum').value) + Number(document.getElementById('secondNum').value);
-            document.getElementById('result').innerHTML=`${document.getElementById('firstNum').value} + ${document.getElementById('secondNum').value} = ${result}`
-            alert(`${document.getElementById('firstNum').value} + ${document.getElementById('secondNum').value} = ${result}`);
+            let a=Number(document.getElementById('firstNum').value);
+            let b=Number(document.getElementById('secondNum').value);
+            let result= a + b;
+            document.getElementById('result').innerHTML=`${a} + ${b} = ${result}`
             document.getElementById('firstNum').value="";
             document.getElementById('secondNum').value=""; 
         },false);
         document.getElementById('substraction').addEventListener('click',(e)=>{
-            
-            let result=Number(document.getElementById('firstNum').value) - Number(document.getElementById('secondNum').value);
-            document.getElementById('result').innerHTML=`${document.getElementById('firstNum').value} - ${document.getElementById('secondNum').value} = ${result}`
-            alert(`${document.getElementById('firstNum').value} + ${document.getElementById('secondNum').value} = ${result}`);
+            let a=Number(document.getElementById('firstNum').value);
+            let b=Number(document.getElementById('secondNum').value);
+            let result= a - b;
+            document.getElementById('result').innerHTML=`${a} - ${b} = ${result}`
+            document.getElementById('firstNum').value="";
+            document.getElementById('secondNum').value="";
+        },false);
+        document.getElementById('multiplication').addEventListener('click',(e)=>{
+            let a=Number(document.getElementById('firstNum').value);
+            let b=Number(document.getElementById('secondNum').value);
+            let result= a * b;
+            document.getElementById('result').innerHTML=`${a} * ${b} = ${result}`
             document.getElementById('firstNum').value="";
             document.getElementById('secondNum').value=""; 
         },false);
-        document.getElementById('substraction').addEventListener('click',(e)=>{
-            
-            let result=Number(document.getElementById('firstNum').value) * Number(document.getElementById('secondNum').value);
-            document.getElementById('result').innerHTML=`${document.getElementById('firstNum').value} - ${document.getElementById('secondNum').value} = ${result}`
-            alert(`${document.getElementById('firstNum').value} * ${document.getElementById('secondNum').value} = ${result}`);
+        document.getElementById('division').addEventListener('click',(e)=>{
+            let a=Number(document.getElementById('firstNum').value);
+            let b=Number(document.getElementById('secondNum').value);
+            let result= a / b;
+            document.getElementById('result').innerHTML=`${a} / ${b} = ${result}`
             document.getElementById('firstNum').value="";
-            document.getElementById('secondNum').value=""; 
+            document.getElementById('secondNum').value="";            
         },false);
-        document.getElementById('substraction').addEventListener('click',(e)=>{
-            
-            let result=Number(document.getElementById('firstNum').value) / Number(document.getElementById('secondNum').value);
-            document.getElementById('result').innerHTML=`${document.getElementById('firstNum').value} - ${document.getElementById('secondNum').value} = ${result}`
-            alert(`${document.getElementById('firstNum').value} / ${document.getElementById('secondNum').value} = ${result}`);
-            document.getElementById('firstNum').value="";
-            document.getElementById('secondNum').value=""; 
-        },false);
-        document.getElementById('result').innerText="Hello Vishal";
     </script>
 </body>
 </html>
