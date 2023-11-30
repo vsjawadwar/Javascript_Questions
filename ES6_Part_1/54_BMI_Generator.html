@@ -56,8 +56,16 @@
             e.preventDefault();
             let height=Number(document.getElementById('height').value);
             let weight=Number(document.getElementById('weight').value);
-            let bmi=(weight)/(height * height);
-            document.getElementById('result').innerHTML=`BMI for height: ${height} and weight ${weight} is ${bmi}`;
+            let result=document.getElementById('result');
+            if(height === "" || height < 0 || isNaN(height)){
+                result.innerHTML=`Kindly enter a valid height ${height}`;
+            }else if(weight === "" || weight < 0 || isNaN(weight)){
+                result.innerHTML=`Kindly enter a valid weight ${weight}`;
+            }
+            else{
+                const bmi=(weight/((height * height) / 10000)).toFixed(2);
+                result.innerHTML=`BMI for height: ${height} and weight ${weight} is ${bmi}`;
+            }
             document.getElementById('height').value="";
             document.getElementById('weight').value="";
         });
