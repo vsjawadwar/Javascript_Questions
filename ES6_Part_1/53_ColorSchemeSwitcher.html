@@ -11,6 +11,7 @@
             border: solid black 2px;
             border-radius: 5px;
             margin: 6px;
+            cursor: pointer;
         }
        .Text{
         font-family: calibri;
@@ -27,15 +28,19 @@
 <body>
     <h1 class="Text">Color Scheme Switcher</h1>
     <div class="container">
-        <button class="btn" id="red"></button>
-        <button class="btn" id="green"></button>
-        <button class="btn" id="blue"></button>
-        <button class="btn" id="tomato"></button>
+        <button class="btn" id="red" style="background-color: red;"></button>
+        <button class="btn" id="green" style="background-color: green;"></button>
+        <button class="btn" id="blue" style="background-color: blue;"></button>
+        <button class="btn" id="tomato" style="background-color: tomato;"></button>
     </div>
     <h3 class="Text">Try clicking on one of the colors above to change the background color of the page!</h3>
     <script>
-        // let colors=['red','green','blue','tomato'];
-        
+        let buttons=document.querySelectorAll('.btn');
+        Array.from(buttons).forEach(function(button){
+            button.addEventListener('click',function(e){
+                document.body.style.backgroundColor=e.target.id;
+            });
+        });
     
     </script>
 </body>
