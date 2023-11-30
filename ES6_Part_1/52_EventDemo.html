@@ -50,6 +50,7 @@
 <span id="result" class="resultDemo" >Hello</span>
     <script>
         document.getElementById('addition').addEventListener('click',(e)=>{
+            e.preventDefault();
             let a=Number(document.getElementById('firstNum').value);
             let b=Number(document.getElementById('secondNum').value);
             let result= a + b;
@@ -58,6 +59,7 @@
             document.getElementById('secondNum').value=""; 
         },false);
         document.getElementById('substraction').addEventListener('click',(e)=>{
+            e.preventDefault();
             let a=Number(document.getElementById('firstNum').value);
             let b=Number(document.getElementById('secondNum').value);
             let result= a - b;
@@ -66,6 +68,7 @@
             document.getElementById('secondNum').value="";
         },false);
         document.getElementById('multiplication').addEventListener('click',(e)=>{
+            e.preventDefault();
             let a=Number(document.getElementById('firstNum').value);
             let b=Number(document.getElementById('secondNum').value);
             let result= a * b;
@@ -74,6 +77,7 @@
             document.getElementById('secondNum').value=""; 
         },false);
         document.getElementById('division').addEventListener('click',(e)=>{
+            e.preventDefault();
             let a=Number(document.getElementById('firstNum').value);
             let b=Number(document.getElementById('secondNum').value);
             let result= a / b;
