@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<style>
+    *{
+        margin:0px;
+        padding: 0px;
+    }
+    body{
+        background-color: #313131;
+    }
+    .container{
+        width: 500px;
+        height: 350px;
+        border: 2px solid black;
+        margin: auto;
+        background-color: bisque;
+        font-family:Helvetica;
+        border-radius: 5px;
+    }
+    h1,p{
+        text-align: center;
+        margin-top: 2px;
+    }
+    .form{
+        text-align: center;
+    }
+    #guessField{
+        width: 150px;
+        height: 40px;
+        margin-bottom: 12px;
+        margin-top: 7px;
+        border:1px solid black;
+        border-radius: 3px;
+    }
+    #submit{
+        border: 1px solid black;
+        width: 120px;
+        height: 40px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div class="container">
+            <h1>Number Guessing Game</h1>
+            <p>Try and Guess a random number between 1 to 10</p>
+            <p>You have 5 attempts to guess the number</p>
+            <br>
+            <form class="form">
+                <label for="guessField" id="guess">Guess A Number</label><br/>
+                <input type="text" id="guessField"><br/>
+                <input type="submit" id="submit" value="Submit a guess">
+            </form>
+            <div class="resultParas">
+                <br/><br/>
+                <p>Previous Guesses: <span class="guesses"></span></p>
+                <br/>
+                <p>Guesses Remaining: <span class="lastResult">5</span></p>
+                <p class="lowOrHigh">asas</p>
+            </div>
+    </div>
+    <script>
+        const randomNumber = parseInt(Math.random()*10+1);
+        const submit=document.querySelector('#submit');
+        const userInput=document.querySelector("guessField");
+    </script>
+</body>
+</html>
