@@ -15,7 +15,7 @@
     }
     .container{
         width: 500px;
-        height: 350px;
+        height: 400px;
         border: 2px solid black;
         margin: auto;
         background-color: bisque;
@@ -36,6 +36,7 @@
         margin-top: 7px;
         border:1px solid black;
         border-radius: 3px;
+        text-align: center;
     }
     #submit{
         border: 1px solid black;
@@ -61,14 +62,103 @@
                 <br/><br/>
                 <p>Previous Guesses: <span class="guesses"></span></p>
                 <br/>
-                <p>Guesses Remaining: <span class="lastResult">5</span></p>
-                <p class="lowOrHigh">asas</p>
+                <p>Guesses Remaining: <span class="lastResult"></span></p>
+                <p class="lowOrHigh"></p>
             </div>
     </div>
     <script>
-        const randomNumber = parseInt(Math.random()*10+1);
+        let randomNumber = parseInt(Math.random()*10+1);
         const submit=document.querySelector('#submit');
-        const userInput=document.querySelector("guessField");
+        const userInput=document.querySelector("#guessField");
+        const guessSlot=document.querySelector(".guesses");
+        const remaining=document.querySelector(".lastResult");
+        const lowOrHigh=document.querySelector(".lowOrHigh");
+        const startOver=document.querySelector(".resultParas");
+        const p=document.createElement('p');
+
+        let previousGuesses=[];
+        let numGuess=1;
+        let playGame=true;
+
+        if(playGame){
+            submit.addEventListener('click',function(e){
+                e.preventDefault();
+                const guess=parseInt(userInput.value);
+                console.log(guess);
+                validateGuess(guess);
+            });
+        }
+        function validateGuess(guess){
+            if(isNaN(guess)){
+                alert("Kindly enter a numeric value");
+            }else if(guess < 0){
+                alert("Kindly enter a number greater than 1");
+            }else if(guess > 100){
+                alert("Kindly enter a number less than 100");
+            }else{
+                previousGuesses.push(guess);
+                if(numGuess === 11){
+                    displayGuess(guess);
+                    displayMessage(`Game over... Random number was ${randomNumber}`);
+                    endGame();
+                }else{
+                    displayGuess(guess);
+                    checkGuess(guess);
+                }
+            }
+        }
+
+        function checkGuess(guess){
+            if(guess === randomNumber){
+                displayMessage(`You guessed it right...`);
+                endGame();
+            }else if(guess < randomNumber){
+                displayMessage(`Number is too low. Please try again`);
+            }else if(guess > randomNumber){
+                displayMessage(`Number is too high. Please try again`);
+            }
+        }
+
+        function displayGuess(guess){
+            userInput.value="";
+            guessSlot.innerHTML += `${guess}, `;
+            numGuess +=1;
+            remaining.innerHTML= `${11 - numGuess}`;
+        }
+
+        function displayMessage(message){
+            lowOrHigh.innerHTML=`<h2>${message}</h2>`;
+        }
+
+        function endGame(){
+            userInput.value='';
+            
+            userInput.setAttribute('disabled','');
+            p.classList.add('button');
+            p.innerHTML=`<h2 id="newGame">Start a new game</h2>`;
+            startOver.appendChild(p);
+            playGame=false;
+            newGame();
+        }
+
+        function newGame(){
+            const newGameButton=document.querySelector("#newGame");
+            newGameButton.addEventListener('click',function(e){
+                randomNumber=parseInt(Math.random()*10+1);
+                previousGuesses=[];
+                numGuess=1;
+                guessSlot.innerHTML='';
+                remaining.innerHTML= `${11 - numGuess}`;
+                userInput.removeAttribute('disabled');
+                startOver.removeChild(p);
+                playGame=true;
+                lowOrHigh.innerHTML='';
+            });
+        }
+
+
+
+
     </script>
 </body>
 </html>
