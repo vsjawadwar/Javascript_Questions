@@ -44,7 +44,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+.clock::before{
+    content: "";
+    height: 0.75rem;
+    width: 0.75rem;
+    border: 2px solid  var(--main-bg-color);
+    background-color: var(--main-text-color);
+    position: absolute;
+    border-radius: 50%;
+    transition: all ease 0.2s;
+    z-index: 1000;
 }
 
 
