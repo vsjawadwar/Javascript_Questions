@@ -106,4 +106,23 @@ body{
 
 /* Done with basic watch design rest animation will be added by javascript DOM manipulation */
 
+.switchControl{
+    margin: 2em auto;
+    bottom: 0;
+
+}
+
+.switchControl #switch-btn{
+font-family: monospace;
+text-transform: uppercase;
+outline: none;
+padding: 0.5rem 1rem;
+background-color: var(--main-bg-color);
+columns: var(--main-text-color);
+border: 1px solid var(--main-text-color);
+border-radius: 0.25rem;
+cursor: pointer;
+transition: all ease 0.1s;
+
+}
 
