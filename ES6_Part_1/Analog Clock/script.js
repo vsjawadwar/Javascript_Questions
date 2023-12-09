@@ -17,3 +17,25 @@ function setClock(){
 setClock();
 
 setInterval(setClock,1000);
+
+const switchTheme=(e)=>{
+const switchBtn=e.target;
+if(switchBtn.textContent.toLowerCase()==='light'){
+    switchBtn.textContent='dark';
+    document.documentElement.setAttribute("data-theme","dark");
+}else{
+    switchBtn.textContent='light';
+    document.documentElement.setAttribute("data-theme","light");
+}
+};
+
+const switchModeBtn=document.querySelector("#switch-btn");
+switchModeBtn.addEventListener('click',switchTheme,false);
+
+let currentTheme="dark";
+
+if(currentTheme){
+    document.documentElement.setAttribute("data-theme",currentTheme);
+    switchBtn.textContent=currentTheme;
+
+}
